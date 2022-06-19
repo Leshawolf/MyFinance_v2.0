@@ -66,6 +66,9 @@
     <PackageReference Include="GemBox.Pdf">
       <Version>17.0.1165</Version>
     </PackageReference>
+    <PackageReference Include="Microcharts.Forms">
+      <Version>0.9.5.9</Version>
+    </PackageReference>
     <PackageReference Include="MySqlConnector">
       <Version>2.1.10</Version>
     </PackageReference>

@@ -9,8 +9,8 @@
             <Grid
                 Margin="0,220,0,0"
                 HeightRequest="260"
-                VerticalOptions="Center"
                 HorizontalOptions="Center"
+                VerticalOptions="Center"
                 WidthRequest="300">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="280" />

@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <PackageReference Include="GemBox.Pdf" Version="17.0.1165" />
+    <PackageReference Include="Microcharts.Forms" Version="0.9.5.9" />
     <PackageReference Include="MySqlConnector" Version="2.1.10" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />

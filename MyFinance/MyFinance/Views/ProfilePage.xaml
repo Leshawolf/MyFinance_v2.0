@@ -3,6 +3,7 @@
     x:Class="MyFinance.Views.ProfilePage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:forms="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
     BackgroundImageSource="fon1.png">
     <ContentPage.Content>
         <StackLayout>
@@ -42,9 +43,9 @@
                                 VerticalOptions="Start"
                                 WidthRequest="110" />
                         </Grid>
-                        <Grid Margin="30,0,0,0">
+                        <Grid Margin="20,40,20,0">
                             <Grid.RowDefinitions>
-                                <RowDefinition Height="130" />
+                                <RowDefinition Height="100" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="400" />
@@ -61,8 +62,8 @@
                                 WidthRequest="300" />
                             <Label
                                 x:Name="CounerLb"
-                                Margin="20,30,0,0"
-                                FontSize="40"
+                                Margin="20,40,0,0"
+                                FontSize="30"
                                 HeightRequest="60"
                                 HorizontalOptions="Start"
                                 Text="0"
@@ -70,16 +71,203 @@
                                 VerticalOptions="CenterAndExpand"
                                 WidthRequest="300" />
                         </Grid>
+                        <Grid
+                            Margin="0,50,0,0"
+                            Padding="0"
+                            HorizontalOptions="Center">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="200" />
+                            </Grid.ColumnDefinitions>
+                            <Frame
+                                Padding="0"
+                                BackgroundColor="Gray"
+                                CornerRadius="20"
+                                HeightRequest="200"
+                                HorizontalOptions="Center"
+                                Opacity="0.4"
+                                VerticalOptions="Center"
+                                WidthRequest="1000" />
+                            <Label
+                                Margin="0,0,0,0"
+                                FontAttributes="Bold"
+                                FontSize="30"
+                                HorizontalOptions="Center"
+                                Text="График"
+                                TextColor="White"
+                                VerticalOptions="Center" />
+                        </Grid>
+
+                        <Grid Margin="0,30,0,0" HorizontalOptions="Center">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="300" />
+                            </Grid.ColumnDefinitions>
+
+                            <Frame
+                                Padding="0"
+                                BackgroundColor="Gray"
+                                CornerRadius="20"
+                                HeightRequest="320"
+                                HorizontalOptions="Center"
+                                Opacity="0.8"
+                                VerticalOptions="Center"
+                                WidthRequest="320">
+                                <Frame.Background>
+                                    <!--  StartPoint defaults to (0,0) Endpoint defaults to (1,1)  -->
+                                    <LinearGradientBrush>
+                                        <GradientStop Offset="0.1" Color="LightSlateGray" />
+                                        <GradientStop Offset="1.0" Color="GhostWhite" />
+                                    </LinearGradientBrush>
+                                </Frame.Background>
+
+                                <Grid HorizontalOptions="Center">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="50" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="130" />
+                                        <ColumnDefinition Width="130" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label
+                                        Grid.Column="0"
+                                        Margin="10,0,0,0"
+                                        FontAttributes="Bold"
+                                        FontSize="20"
+                                        HorizontalTextAlignment="Start"
+                                        Text="Доход: 🟩"
+                                        TextColor="White"
+                                        VerticalOptions="Center" />
+                                    <Label
+                                        Grid.Column="1"
+                                        Margin="10,0,0,0"
+                                        FontAttributes="Bold"
+                                        FontSize="20"
+                                        HorizontalTextAlignment="Start"
+                                        Text="Расход: 🟥"
+                                        TextColor="White"
+                                        VerticalOptions="Center" />
+                                </Grid>
+                            </Frame>
+                        </Grid>
+                        <Grid HorizontalOptions="Center">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="350" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="370" />
+                            </Grid.ColumnDefinitions>
+                            <Frame
+                                Padding="0"
+                                BackgroundColor="White"
+                                CornerRadius="20"
+                                HeightRequest="320"
+                                HorizontalOptions="Center"
+                                Opacity="0.8"
+                                VerticalOptions="Center"
+                                WidthRequest="320">
+                                <Frame.Background>
+                                    <!--  StartPoint defaults to (0,0) Endpoint defaults to (1,1)  -->
+                                    <LinearGradientBrush>
+                                        <GradientStop Offset="0.1" Color="LightSlateGray" />
+                                        <GradientStop x:Name="check1" Offset="1.0" Color="GhostWhite" />
+                                    </LinearGradientBrush>
+                                </Frame.Background>
+
+                                <forms:ChartView
+                                    x:Name="Chart1"
+                                    HeightRequest="300"
+                                    HorizontalOptions="Center"
+                                    IgnorePixelScaling="False"
+                                    ScaleX="1"
+                                    ScaleY="1"
+                                    VerticalOptions="Center"
+                                    WidthRequest="300" />
+                            </Frame>
+                        </Grid>
+                        <Grid HorizontalOptions="Center">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="350" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="370" />
+                            </Grid.ColumnDefinitions>
+                            <Frame
+                                Padding="0"
+                                BackgroundColor="Gray"
+                                CornerRadius="20"
+                                HeightRequest="320"
+                                HorizontalOptions="Center"
+                                Opacity="0.8"
+                                VerticalOptions="Center"
+                                WidthRequest="320">
+                                <Frame.Background>
+                                    <!--  StartPoint defaults to (0,0) Endpoint defaults to (1,1)  -->
+                                    <LinearGradientBrush>
+                                        <GradientStop Offset="0.1" Color="LightSlateGray" />
+                                        <GradientStop x:Name="check2" Offset="1.0" Color="GhostWhite" />
+                                    </LinearGradientBrush>
+                                </Frame.Background>
+                                <forms:ChartView
+                                    x:Name="Chart2"
+                                    HeightRequest="300"
+                                    HorizontalOptions="Center"
+                                    IgnorePixelScaling="False"
+                                    ScaleX="1"
+                                    ScaleY="1"
+                                    VerticalOptions="Center"
+                                    WidthRequest="300" />
+                            </Frame>
+                        </Grid>
+
+                        <Grid HorizontalOptions="Center">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="350" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="370" />
+                            </Grid.ColumnDefinitions>
+                            <Frame
+                                Padding="0"
+                                BackgroundColor="Gray"
+                                CornerRadius="20"
+                                HeightRequest="320"
+                                HorizontalOptions="Center"
+                                Opacity="0.8"
+                                VerticalOptions="Center"
+                                WidthRequest="320">
+                                <Frame.Background>
+                                    <LinearGradientBrush>
+                                        <GradientStop Offset="0.1" Color="LightSlateGray" />
+                                        <GradientStop x:Name="check3" Offset="1.0" Color="GhostWhite" />
+                                    </LinearGradientBrush>
+                                </Frame.Background>
+                                <forms:ChartView
+                                    x:Name="Chart5"
+                                    HeightRequest="300"
+                                    HorizontalOptions="Center"
+                                    IgnorePixelScaling="False"
+                                    ScaleX="1"
+                                    ScaleY="1"
+                                    VerticalOptions="Center"
+                                    WidthRequest="300" />
+                            </Frame>
+                        </Grid>
                         <Button
                             x:Name="otchet"
-                            Margin="30,10,0,0"
+                            Margin="0,10,0,0"
                             BackgroundColor="#151719"
                             BorderColor="Gray "
                             BorderWidth="2"
                             Clicked="otchet_Clicked"
                             CornerRadius="20"
                             HeightRequest="60"
-                            HorizontalOptions="Start"
+                            HorizontalOptions="Center"
+                            Opacity="0.8"
                             Text="Соглашение пользователя"
                             TextColor="White"
                             VerticalOptions="End"
