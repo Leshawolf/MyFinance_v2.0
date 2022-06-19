@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage
+    x:Class="MyFinance.Views.Main"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:local="clr-namespace:MyFinance.Views"
+    android:TabbedPage.ToolbarPlacement="Bottom"
+    BarBackgroundColor="Black"
+    BarTextColor="Gray"
+    SelectedTabColor="White"
+    UnselectedTabColor="Gray">
+    <TabbedPage.Children>
+        <local:ProfilePage IconImageSource="icon_house.png" />
+        <local:FinanceAddingPage IconImageSource="pluse.png" />
+        <local:FinancePage IconImageSource="icon_calendar2.png" />
+    </TabbedPage.Children>
+</TabbedPage>

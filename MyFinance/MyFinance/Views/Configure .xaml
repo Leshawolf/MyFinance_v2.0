@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MyFinance.Views.Configure"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <StackLayout>
+            <ImageButton
+                x:Name="closeConfigButton"
+                Margin="27,35,0,0"
+                BackgroundColor="Transparent"
+                Clicked="closeConfigButton_Clicked"
+                HorizontalOptions="Start"
+                Source="closeIcon.png" />
+            <Label
+                Margin="27,20,0,20"
+                FontAttributes="Bold"
+                FontSize="38"
+                Text="Параметры"
+                TextColor="White" />
+            <Frame
+                BackgroundColor="Gray"
+                BorderColor="White"
+                CornerRadius="7"
+                HeightRequest="180"
+                HorizontalOptions="Center"
+                Opacity="0.6"
+                WidthRequest="290">
+                <Label
+                    Margin="27,20,0,20"
+                    FontAttributes="Bold"
+                    FontSize="38"
+                    Text="-"
+                    TextColor="White" />
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

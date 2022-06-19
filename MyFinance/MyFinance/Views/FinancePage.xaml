@@ -1,0 +1,391 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MyFinance.Views.FinancePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local1="clr-namespace:MyFinance.Models"
+    BackgroundImageSource="fon1.gpg">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Clicked="AddButton_Clicked" IconImageSource="pluse.png" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid Margin="0,45,20,20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300" />
+                    <ColumnDefinition Width="60" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="42" />
+                </Grid.RowDefinitions>
+                <Label
+                    Margin="27,0,0,0"
+                    FontAttributes="Bold"
+                    FontSize="35"
+                    Text="Ваши расчёты:"
+                    TextColor="White" />
+                <ImageButton
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Padding="0,0,14,0"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="End"
+                    Source="sorted.png" />
+                <local1:BorderlessPicker
+                    x:Name="picker"
+                    Title="Выберите последовательность:"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    SelectedIndex="0"
+                    SelectedIndexChanged="picker_SelectedIndexChanged"
+                    TextColor="Transparent"
+                    TitleColor="Transparent">
+                    <Picker.Items>
+                        <x:String>Случайная</x:String>
+                        <x:String>По цене ↑</x:String>
+                        <x:String>По цене ↓</x:String>
+                        <x:String>Новое</x:String>
+                        <x:String>Старое</x:String>
+                    </Picker.Items>
+                </local1:BorderlessPicker>
+            </Grid>
+            <RefreshView
+                x:Name="refresh"
+                RefreshColor="Teal"
+                Refreshing="refresh_Refreshing">
+
+                <ScrollView x:Name="List">
+                    <StackLayout>
+
+                        <Frame
+                            Margin="10,0,10,0"
+                            BackgroundColor="Transparent"
+                            HeightRequest="120">
+                            <Grid>
+                                <Frame
+                                    BorderColor="LightGray"
+                                    CornerRadius="12"
+                                    HasShadow="True"
+                                    HeightRequest="80"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="End"
+                                    WidthRequest="310">
+                                    <Frame.Background>
+                                        <!--  StartPoint defaults to (0,0) Endpoint defaults to (1,1)  -->
+                                        <LinearGradientBrush>
+                                            <GradientStop Offset="0.1" Color="black" />
+                                            <GradientStop Offset="0.1" Color="black" />
+                                            <GradientStop x:Name="check1" Offset="1.0" Color="Green" />
+                                        </LinearGradientBrush>
+                                    </Frame.Background>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="160" />
+                                            <ColumnDefinition Width="0" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="32" />
+                                            <RowDefinition Height="50" />
+                                        </Grid.RowDefinitions>
+                                        <Label
+                                            x:Name="NameLabel_1"
+                                            Grid.Row="0"
+                                            Grid.Column="0"
+                                            FontAttributes="Bold"
+                                            FontSize="27"
+                                            Text="NoN"
+                                            TextColor="White" />
+                                        <Label
+                                            x:Name="DiscriptionLabel_1"
+                                            Grid.Row="1"
+                                            Grid.Column="2"
+                                            Margin="0,4,0,0"
+                                            FontSize="17"
+                                            HorizontalOptions="End"
+                                            Text="NoN"
+                                            TextColor="White"
+                                            VerticalOptions="End" />
+                                        <Label
+                                            x:Name="DateLabel_1"
+                                            Grid.Row="1"
+                                            Grid.ColumnSpan="3"
+                                            Margin="0,4,0,0"
+                                            FontSize="12"
+                                            Text="NoN"
+                                            TextColor="#E2E2E2" />
+
+                                    </Grid>
+                                </Frame>
+                            </Grid>
+                        </Frame>
+
+                        <Frame
+                            Margin="10,0,10,0"
+                            BackgroundColor="Transparent"
+                            HeightRequest="120">
+                            <Grid>
+                                <Frame
+                                    BorderColor="LightGray"
+                                    CornerRadius="12"
+                                    HasShadow="True"
+                                    HeightRequest="80"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="End"
+                                    WidthRequest="310">
+                                    <Frame.Background>
+                                        <!--  StartPoint defaults to (0,0) Endpoint defaults to (1,1)  -->
+                                        <LinearGradientBrush>
+                                            <GradientStop Offset="0.1" Color="black" />
+                                            <GradientStop Offset="0.1" Color="black" />
+                                            <GradientStop x:Name="check2" Offset="1.0" Color="red" />
+                                        </LinearGradientBrush>
+                                    </Frame.Background>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="160" />
+                                            <ColumnDefinition Width="0" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="32" />
+                                            <RowDefinition Height="50" />
+                                        </Grid.RowDefinitions>
+                                        <Label
+                                            x:Name="NameLabel_2"
+                                            Grid.Row="0"
+                                            Grid.Column="0"
+                                            FontAttributes="Bold"
+                                            FontSize="27"
+                                            Text="NoN"
+                                            TextColor="White" />
+                                        <Label
+                                            x:Name="DiscriptionLabel_2"
+                                            Grid.Row="1"
+                                            Grid.Column="2"
+                                            Margin="0,4,0,0"
+                                            FontSize="16"
+                                            HorizontalOptions="End"
+                                            Text="NoN"
+                                            TextColor="white"
+                                            VerticalOptions="End" />
+                                        <Label
+                                            x:Name="DateLabel_2"
+                                            Grid.Row="1"
+                                            Grid.ColumnSpan="3"
+                                            Margin="0,4,0,0"
+                                            FontSize="12"
+                                            Text="NoN"
+                                            TextColor="#E2E2E2" />
+                                    </Grid>
+                                </Frame>
+                            </Grid>
+                        </Frame>
+
+                        <Frame
+                            Margin="10,0,10,0"
+                            BackgroundColor="Transparent"
+                            HeightRequest="120">
+                            <Grid>
+                                <Frame
+                                    BorderColor="LightGray"
+                                    CornerRadius="12"
+                                    HasShadow="True"
+                                    HeightRequest="80"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="End"
+                                    WidthRequest="310">
+                                    <Frame.Background>
+                                        <!--  StartPoint defaults to (0,0) Endpoint defaults to (1,1)  -->
+                                        <LinearGradientBrush>
+                                            <GradientStop Offset="0.1" Color="black" />
+                                            <GradientStop Offset="0.1" Color="black" />
+                                            <GradientStop x:Name="check3" Offset="1.0" Color="white" />
+                                        </LinearGradientBrush>
+                                    </Frame.Background>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="160" />
+                                            <ColumnDefinition Width="0" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="32" />
+                                            <RowDefinition Height="50" />
+                                        </Grid.RowDefinitions>
+                                        <Label
+                                            x:Name="NameLabel_3"
+                                            Grid.Row="0"
+                                            Grid.Column="0"
+                                            FontAttributes="Bold"
+                                            FontSize="27"
+                                            Text="NoN"
+                                            TextColor="White" />
+                                        <Label
+                                            x:Name="DiscriptionLabel_3"
+                                            Grid.Row="1"
+                                            Grid.Column="2"
+                                            Margin="0,4,0,0"
+                                            FontSize="17"
+                                            HorizontalOptions="End"
+                                            Text="NoN"
+                                            TextColor="white"
+                                            VerticalOptions="End" />
+                                        <Label
+                                            x:Name="DateLabel_3"
+                                            Grid.Row="1"
+                                            Grid.ColumnSpan="3"
+                                            Margin="0,4,0,0"
+                                            FontSize="12"
+                                            Text="NoN"
+                                            TextColor="#E2E2E2" />
+                                    </Grid>
+                                </Frame>
+                            </Grid>
+                        </Frame>
+
+                        <Frame
+                            Margin="10,0,10,0"
+                            BackgroundColor="Transparent"
+                            HeightRequest="120">
+                            <Grid>
+                                <Frame
+                                    BorderColor="LightGray"
+                                    CornerRadius="12"
+                                    HasShadow="True"
+                                    HeightRequest="80"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="End"
+                                    WidthRequest="310">
+                                    <Frame.Background>
+                                        <LinearGradientBrush>
+                                            <GradientStop Offset="0.1" Color="black" />
+                                            <GradientStop Offset="0.1" Color="black" />
+                                            <GradientStop x:Name="check4" Offset="1.0" Color="white" />
+                                        </LinearGradientBrush>
+                                    </Frame.Background>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="160" />
+                                            <ColumnDefinition Width="0" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="32" />
+                                            <RowDefinition Height="50" />
+                                        </Grid.RowDefinitions>
+                                        <Label
+                                            x:Name="NameLabel_4"
+                                            Grid.Row="0"
+                                            Grid.Column="0"
+                                            FontAttributes="Bold"
+                                            FontSize="27"
+                                            Text="NoN"
+                                            TextColor="White" />
+                                        <Label
+                                            x:Name="DiscriptionLabel_4"
+                                            Grid.Row="1"
+                                            Grid.Column="2"
+                                            Margin="0,4,0,0"
+                                            FontFamily="Bold"
+                                            FontSize="17"
+                                            HorizontalOptions="End"
+                                            Text="NoN"
+                                            TextColor="White"
+                                            VerticalOptions="End" />
+                                        <Label
+                                            x:Name="DateLabel_4"
+                                            Grid.Row="1"
+                                            Grid.ColumnSpan="3"
+                                            Margin="0,4,0,0"
+                                            FontSize="12"
+                                            Text="NoN"
+                                            TextColor="#E2E2E2" />
+                                    </Grid>
+                                </Frame>
+                            </Grid>
+                        </Frame>
+                        <Frame
+                            Margin="10,0,10,0"
+                            BackgroundColor="Transparent"
+                            HeightRequest="120">
+                            <Grid>
+                                <Frame
+                                    BorderColor="LightGray"
+                                    CornerRadius="12"
+                                    HasShadow="True"
+                                    HeightRequest="80"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="End"
+                                    WidthRequest="310">
+                                    <Frame.Background>
+                                        <LinearGradientBrush>
+                                            <GradientStop Offset="0.1" Color="black" />
+                                            <GradientStop Offset="0.1" Color="black" />
+                                            <GradientStop x:Name="check5" Offset="1.0" Color="white" />
+                                        </LinearGradientBrush>
+                                    </Frame.Background>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="160" />
+                                            <ColumnDefinition Width="0" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="32" />
+                                            <RowDefinition Height="50" />
+                                        </Grid.RowDefinitions>
+                                        <Label
+                                            x:Name="NameLabel_5"
+                                            Grid.Row="0"
+                                            Grid.Column="0"
+                                            FontAttributes="Bold"
+                                            FontSize="27"
+                                            Text="NoN"
+                                            TextColor="White" />
+                                        <Label
+                                            x:Name="DiscriptionLabel_5"
+                                            Grid.Row="1"
+                                            Grid.Column="2"
+                                            Margin="0,4,0,0"
+                                            FontFamily="Bold"
+                                            FontSize="17"
+                                            HorizontalOptions="End"
+                                            Text="NoN"
+                                            TextColor="White"
+                                            VerticalOptions="End" />
+                                        <Label
+                                            x:Name="DateLabel_5"
+                                            Grid.Row="1"
+                                            Grid.ColumnSpan="3"
+                                            Margin="0,4,0,0"
+                                            FontSize="12"
+                                            Text="NoN"
+                                            TextColor="#E2E2E2" />
+                                    </Grid>
+                                </Frame>
+                            </Grid>
+                        </Frame>
+
+                        <Button
+                            x:Name="nextFrames"
+                            Margin="30,0,30,20"
+                            BackgroundColor="black"
+                            BorderColor="white"
+                            BorderWidth="1"
+                            Clicked="nextFrames_Clicked"
+                            CornerRadius="20"
+                            FontAttributes="Bold"
+                            FontFamily="OpenSans-Bold2.ttf"
+                            FontSize="12"
+                            HeightRequest="40"
+                            HorizontalOptions="Center"
+                            Text="Следующее"
+                            TextColor="White"
+                            VerticalOptions="Center"
+                            WidthRequest="200" />
+                    </StackLayout>
+
+                </ScrollView>
+            </RefreshView>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
